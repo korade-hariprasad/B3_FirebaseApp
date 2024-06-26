@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "961270510055",
+    "project_id": "b3-firebaseapp",
+    "storage_bucket": "b3-firebaseapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961270510055:android:b1aa4381027d3265838d42",
+        "android_client_info": {
+          "package_name": "sumagoscope.madipt.b3_firebaseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ8fpQ3vSFXZxledr1m1Bstq9fO0zTGvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
