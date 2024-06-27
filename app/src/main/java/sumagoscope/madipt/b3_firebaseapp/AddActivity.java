@@ -1,5 +1,6 @@
 package sumagoscope.madipt.b3_firebaseapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,6 @@ public class AddActivity extends AppCompatActivity {
 
     EditText etName, etAge;
     Button btnAdd;
-    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,10 @@ public class AddActivity extends AppCompatActivity {
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
         btnAdd = findViewById(R.id.btnAdd);
-        db = FirebaseFirestore.getInstance();
 
         btnAdd.setOnClickListener(v->{
             //add name & age in firestore database
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("students").document();
             String id = docRef.getId();
             String name = etName.getText().toString().trim();
@@ -50,6 +50,7 @@ public class AddActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(AddActivity.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                                finish();
                             }else{
                                 Toast.makeText(AddActivity.this, "Data Not Inserted", Toast.LENGTH_SHORT).show();
                             }
